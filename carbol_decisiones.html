@@ -1,0 +1,124 @@
+ 
+<style>
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        
+        .header {
+            background: linear-gradient(139deg, #396FE9 1%, #ffffff 14%);
+            color: black;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .custom-multi-step-container {
+            padding: 30px;
+        }
+        
+        .steps-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .steps-navigation::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: #F0F5FA;
+            z-index: 1;
+        }
+        
+        .step-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .step-tab i {
+            width: 60px;
+            height: 60px;
+            background-color: #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #64748b;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .step-tab span {
+            font-weight: 600;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+        
+        .step-tab.active i {
+            background-color: #396FE9;
+            color: white;
+            box-shadow: 0 5px 15px rgba(57, 111, 233, 0.4);
+            transform: scale(1.1);
+        }
+        
+        .step-tab.active span {
+            color: #1E293B;
+        }
+        
+        .step-tab.completed i {
+            background-color: #10b981;
+            color: white;
+        }
+        
+        .step-tab.completed span {
+            color: #10b981;
+        }
+        
+        .step-content-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step {
+            display: none;
+        }
+        
+        .step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
