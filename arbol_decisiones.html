@@ -459,3 +459,101 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
+        
+        .selection-message.show {
+            opacity: 1;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        
+        .prev-button {
+            background-color: #e2e8f0;
+            color: #475569;
+        }
+        
+        .prev-button:hover {
+            background-color: #cbd5e1;
+        }
+        
+        .next-button {
+            background: linear-gradient(120deg, #396FE9 0%, #1d4ed8 100%);
+            color: white;
+        }
+        
+        .next-button:hover {
+            opacity: 0.9;
+            box-shadow: 0 5px 15px rgba(57, 111, 233, 0.4);
+        }
+        
+        .submit-form-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(120deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .submit-form-button:hover {
+            opacity: 0.9;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .summary-box {
+            background-color: #f0f9ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #bae6fd;
+        }
+        
+        .summary-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #0c4a6e;
+            border-bottom: 1px solid #bae6fd;
+            padding-bottom: 10px;
+        }
+        
+        .summary-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .summary-item strong {
+            width: 120px;
+            color: #475569;
+        }
+        
+        .summary-item span {
+            color: #1e293b;
+            font-weight: 500;
+        }
