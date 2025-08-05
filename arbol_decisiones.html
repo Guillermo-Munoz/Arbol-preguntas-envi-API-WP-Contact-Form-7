@@ -556,3 +556,118 @@
             color: #1e293b;
             font-weight: 500;
         }
+
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #334155;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+         /* Estilos adicionales para mensajes */
+        .form-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+        
+        .form-status.success {
+            background-color: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+        
+        .form-status.error {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .selection-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .step-tab i {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .steps-navigation {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+            
+            .steps-navigation::before {
+                display: none;
+            }
+            
+            .step-tab {
+                flex: 0 0 calc(50% - 30px);
+                margin-bottom: 20px;
+            }
+            
+            .selection-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .custom-multi-step-container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
