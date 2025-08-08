@@ -615,3 +615,100 @@
                         </button>
                     </div>
                 </div>
+
+                
+                <!-- Paso 2: Selección de Compañía -->
+                <div id="step-2" class="step">
+                    <h2>Selecciona una compañía</h2>
+                    <div class="selection-grid" id="company-selection-grid">
+                        <!-- Las opciones se cargarán dinámicamente según el servicio seleccionado -->
+                    </div>
+                    <div class="selection-message" id="company-message">Por favor, selecciona una compañía</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev-button" data-prev-step="1">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button class="nav-button next-button" data-next-step="3">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Paso 3: Selección de Oferta -->
+                <div id="step-3" class="step">
+                    <h2>¿Qué oferta te interesa?</h2>
+                    <div class="selection-grid" id="offer-selection-grid">
+                        <!-- Las ofertas se cargarán dinámicamente según el servicio -->
+                    </div>
+                    <div class="selection-message" id="offer-message">Por favor, selecciona una oferta</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev-button" data-prev-step="2">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button class="nav-button next-button" data-next-step="4">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Paso 4: Formulario de Contacto -->
+                <div id="step-4" class="step">
+                    <div class="contact-form-step">
+                        <h2>Completa tus datos</h2>
+                        
+                        <div class="summary-box">
+                            <h3>Resumen de tu selección:</h3>
+                            <div class="summary-item">
+                                <strong>Servicio:</strong> <span id="summary-service">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Compañía:</strong> <span id="summary-company">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Oferta:</strong> <span id="summary-offer">-</span>
+                            </div>
+                        </div>
+                        
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre completo *</label>
+                                <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre completo">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico *</label>
+                                    <input type="email" id="email" name="email" required placeholder="ejemplo@email.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Teléfono *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+34 600 000 000">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje adicional (opcional)</label>
+                                <textarea id="message" name="message" placeholder="¿Algo más que quieras añadir?"></textarea>
+                            </div>
+                            
+                            <input type="hidden" id="selected-service" name="selected-service">
+                            <input type="hidden" id="selected-company" name="selected-company">
+                            <input type="hidden" id="selected-offer" name="selected-offer">
+                            
+                            <button type="button" id="Enviar-solicitud" class="submit-form-button">
+                              <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                              </button>
+                              <div id="form-status" class="form-status" style="display: none;"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="nav-button prev-button" data-prev-step="3">
+                            <i class="fas fa-arrow-left"></i> Atrás
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
