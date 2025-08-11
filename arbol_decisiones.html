@@ -774,3 +774,60 @@
                 'Otros': 'https://..................................',
                 'Otra compañía': 'https:...................................'
             };
+
+             
+            // Ofertas específicas para telefonía
+            const phoneOffers = [
+                { id: 'fibra', name: 'Fibra', icon: 'fas fa-wifi', description: 'Internet de alta velocidad' },
+                { id: 'fibra_linea', name: 'Fibra + Línea', icon: 'fas fa-phone', description: 'Internet + teléfono fijo' },
+                { id: 'fibra_linea_tv', name: 'Fibra + Línea + TV', icon: 'fas fa-tv', description: 'Paquete completo' },
+                { id: 'otros', name: 'Otros', icon: 'fas fa-star', description: 'Otras ofertas' }
+            ];
+            
+            // Ofertas genéricas para otros servicios
+            const genericOffers = [
+                { id: 'hogar', name: 'Hogar', icon: 'fas fa-home', description: 'Ofertas para viviendas' },
+                { id: 'negocio', name: 'Negocio', icon: 'fas fa-briefcase', description: 'Soluciones empresariales' },
+                { id: 'otros', name: 'Otros', icon: 'fas fa-star', description: 'Ofertas especiales' }
+            ];
+            
+            // Inicializar el formulario
+            updateStepUI();
+            
+            // Función para actualizar la UI
+            function updateStepUI() {
+                // Actualizar pestañas
+                stepTabs.forEach(tab => {
+                    const step = parseInt(tab.dataset.step);
+                    tab.classList.remove('active', 'completed');
+                    
+                    if (step === currentStep) {
+                        tab.classList.add('active');
+                    } else if (step < currentStep) {
+                        tab.classList.add('completed');
+                    }
+                });
+                
+                // Actualizar pasos
+                steps.forEach(step => {
+                    step.classList.remove('active');
+                    if (parseInt(step.id.split('-')[1]) === currentStep) {
+                        step.classList.add('active');
+                    }
+                });
+                
+                // Actualizar resumen en el paso final
+                if (currentStep === 4) {
+                    document.getElementById('summary-service').textContent = 
+                        selectedService ? getServiceName(selectedService) : '-';
+                    document.getElementById('summary-company').textContent = 
+                        selectedCompany ? selectedCompany : '-';
+                    document.getElementById('summary-offer').textContent = 
+                        selectedOffer ? getOfferName(selectedOffer) : '-';
+                        
+                    // Actualizar campos ocultos del formulario
+                    document.getElementById('selected-service').value = selectedService;
+                    document.getElementById('selected-company').value = selectedCompany;
+                    document.getElementById('selected-offer').value = selectedOffer;
+                }
+            }
