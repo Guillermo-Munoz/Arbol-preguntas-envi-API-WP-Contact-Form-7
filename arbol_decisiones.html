@@ -712,3 +712,65 @@
             </div>
         </div>
     </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del DOM
+            const multiStepForm = document.getElementById('multi-step-form-section');
+            const stepTabs = multiStepForm.querySelectorAll('.step-tab');
+            const steps = multiStepForm.querySelectorAll('.step');
+            const prevButtons = multiStepForm.querySelectorAll('.prev-button');
+            const nextButtons = multiStepForm.querySelectorAll('.next-button');
+            const companyGrid = document.getElementById('company-selection-grid');
+            const offerGrid = document.getElementById('offer-selection-grid');
+            const contactForm = document.getElementById('contact-form');
+            
+            // Variables de estado
+            let currentStep = 1;
+            let selectedService = null;
+            let selectedCompany = null;
+            let selectedOffer = null;
+            
+            // Mapeo de compañías por servicio
+            const companiesByService = {
+                energia: ['Iberdrola', 'Repsol', 'Endesa', 'Naturgy', 'Plenitude', 'Otra compañía'],
+                telefonia: ['Movistar', 'Vodafone', 'Orange', 'MásMóvil', 'Yoigo', 'O2', 'Otros'],
+                alarmas: ['Segurma', 'ADT', 'Securitas Direct', 'Prosegur', 'Otros'],
+                seguros: ['Mapfre', 'DKV', 'Preventiva', 'Fiatc', 'Otros']
+            };
+            
+            // Mapeo de imágenes para cada compañía
+            const companyImages = {
+                // Energía
+                'Iberdrola': 'https.................................. ',
+                'Repsol': 'http..................................',
+                'Endesa': 'https:...................................png',
+                'Naturgy': 'https:/...................................png',
+                'Plenitude': 'ht..................................',
+                
+                // Telefonía
+                'Movistar': 'https://..................................',
+                'Vodafone': 'https://..................................',
+                'Orange': 'https:..................................',
+                'MásMóvil': 'https://..................................',
+                'Yoigo': '..................................',
+                'O2': 'https://..................................',
+                
+                // Alarmas
+                'Segurma': 'https:/..................................',
+                'ADT': 'https://..................................',
+                'Securitas Direct': '..................................',
+                'Prosegur': 'https://..................................
+                ',
+                
+                // Seguros
+                'Mapfre': 'https:..................................',
+                'DKV': 'https://..................................',
+                'Preventiva': 'https:..................................',
+                'Fiatc': 'https://..................................',
+                
+                // Imágenes por defecto para "Otros" y "Otra compañía"
+                'Otros': 'https://..................................',
+                'Otra compañía': 'https:...................................'
+            };
