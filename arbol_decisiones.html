@@ -831,3 +831,70 @@
                     document.getElementById('selected-offer').value = selectedOffer;
                 }
             }
+
+            
+            // Función para obtener nombre del servicio
+            function getServiceName(serviceKey) {
+                const serviceNames = {
+                    energia: 'Energía',
+                    telefonia: 'Telefonía',
+                    alarmas: 'Alarmas',
+                    seguros: 'Seguros'
+                };
+                return serviceNames[serviceKey] || serviceKey;
+            }
+            
+            // Función para obtener nombre de la oferta
+            function getOfferName(offerKey) {
+                const offerNames = {
+                    hogar: 'Hogar',
+                    negocio: 'Negocio',
+                    otros: 'Otros',
+                    fibra: 'Fibra',
+                    fibra_linea: 'Fibra + Línea',
+                    fibra_linea_tv: 'Fibra + Línea + TV'
+                };
+                return offerNames[offerKey] || offerKey;
+            }
+            
+            // Función para renderizar opciones de compañía basadas en el servicio seleccionado
+            function renderCompanyOptions() {
+                // Limpiar el grid
+                companyGrid.innerHTML = '';
+                
+                if (!selectedService) return;
+                
+                const companies = companiesByService[selectedService];
+                
+                if (companies) {
+                    companies.forEach(company => {
+                        const companyCard = document.createElement('div');
+                        companyCard.className = 'selection-card';
+                        companyCard.dataset.company = company;
+                        
+                        // Obtener la imagen de la compañía o usar una por defecto
+                        const imageUrl = companyImages[company] || 'https://.......................';
+                        
+                        companyCard.innerHTML = `
+                            <img src="${imageUrl}" alt="${company}" class="company-logo">
+                            <h3>${company}</h3>
+                        `;
+                        
+                        companyCard.addEventListener('click', function() {
+                            // Deseleccionar otros
+                            document.querySelectorAll('#company-selection-grid .selection-card').forEach(card => {
+                                card.classList.remove('selected');
+                            });
+                            
+                            // Seleccionar este
+                            this.classList.add('selected');
+                            selectedCompany = this.dataset.company;
+                            
+                            // Ocultar mensaje de error
+                            document.getElementById('company-message').classList.remove('show');
+                        });
+                        
+                        companyGrid.appendChild(companyCard);
+                    });
+                }
+            }
