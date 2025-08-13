@@ -898,3 +898,85 @@
                     });
                 }
             }
+
+            
+            // Función para renderizar ofertas según el servicio
+            function renderOfferOptions() {
+                // Limpiar el grid
+                offerGrid.innerHTML = '';
+                
+                let offers = [];
+                
+                // Determinar qué ofertas mostrar según el servicio
+                if (selectedService === 'telefonia') {
+                    offers = phoneOffers;
+                } else {
+                    offers = genericOffers;
+                }
+                
+                // Renderizar las ofertas
+                offers.forEach(offer => {
+                    const offerCard = document.createElement('div');
+                    offerCard.className = 'selection-card';
+                    offerCard.dataset.offer = offer.id;
+                    
+                    offerCard.innerHTML = `
+                        <div class="service-icon">
+                            <i class="${offer.icon}"></i>
+                        </div>
+                        <h3>${offer.name}</h3>
+                        <p>${offer.description}</p>
+                    `;
+                    
+                    offerCard.addEventListener('click', function() {
+                        // Deseleccionar otros
+                        document.querySelectorAll('#offer-selection-grid .selection-card').forEach(card => {
+                            card.classList.remove('selected');
+                        });
+                        
+                        // Seleccionar este
+                        this.classList.add('selected');
+                        selectedOffer = this.dataset.offer;
+                        
+                        // Ocultar mensaje de error
+                        document.getElementById('offer-message').classList.remove('show');
+                    });
+                    
+                    offerGrid.appendChild(offerCard);
+                });
+            }
+            
+            // Función para validar el paso actual
+            function validateStep(step) {
+                let isValid = true;
+                const message = document.getElementById(getMessageId(step));
+                
+                // Resetear mensaje
+                if (message) {
+                    message.classList.remove('show');
+                }
+                
+                // Validar según el paso
+                switch (step) {
+                    case 1:
+                        if (!selectedService) {
+                            isValid = false;
+                            if (message) message.classList.add('show');
+                        }
+                        break;
+                    case 2:
+                        if (!selectedCompany) {
+                            isValid = false;
+                            if (message) message.classList.add('show');
+                        }
+                        break;
+                    case 3:
+                        if (!selectedOffer) {
+                            isValid = false;
+                            if (message) message.classList.add('show');
+                        }
+                        break;
+                }
+                
+                return isValid;
+            }
