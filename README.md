@@ -4,8 +4,6 @@ Este proyecto es un **formulario interactivo en múltiples pasos (multi-step for
 Está diseñado para insertarse manualmente en una web con **WordPress**, integrándose con la **API REST** y el plugin **Contact Form 7** para el envío de propuestas personalizadas.  
 
 ---
-![Imagen de modulo](Portada.png)
----
 
 ##  Características
 
@@ -25,6 +23,10 @@ Está diseñado para insertarse manualmente en una web con **WordPress**, integr
 - **Font Awesome 5** – Iconografía para los pasos y opciones.  
 - **WordPress REST API** – Envío y gestión de propuestas.  
 - **Contact Form 7** – Plugin de WordPress para recibir los datos del formulario.  
+
+---
+## 📸 Captura del módulo
+![Imagen de modulo](Portada.png)
 
 ---
 
@@ -78,4 +80,5 @@ Actualmente está diseñado como **módulo independiente** para ser insertado en
 ---
 
 📅 Proyecto educativo / demostración en **WordPress + Contact Form 7**
+
 
