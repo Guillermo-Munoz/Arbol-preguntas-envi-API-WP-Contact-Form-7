@@ -1,11 +1,13 @@
- # 📋 Módulo Formulario Multistep - WordPress + Contact Form 7
+ #  Módulo Formulario Multistep - WordPress + Contact Form 7
 
 Este proyecto es un **formulario interactivo en múltiples pasos (multi-step form)** desarrollado en **HTML, CSS y JavaScript**.  
 Está diseñado para insertarse manualmente en una web con **WordPress**, integrándose con la **API REST** y el plugin **Contact Form 7** para el envío de propuestas personalizadas.  
 
 ---
+![Imagen de modulo](Portada.png)
+---
 
-## ✨ Características
+##  Características
 
 - 🔹 **Flujo en 4 pasos**: selección de servicio, compañía, oferta y datos de contacto.  
 - 🔹 **Diseño responsivo** optimizado para desktop y móvil.  
@@ -16,7 +18,7 @@ Está diseñado para insertarse manualmente en una web con **WordPress**, integr
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - **HTML5 + CSS3** – Maquetación y estilos avanzados.  
 - **JavaScript (vanilla)** – Lógica de pasos, validaciones y dinámicas.  
@@ -26,7 +28,7 @@ Está diseñado para insertarse manualmente en una web con **WordPress**, integr
 
 ---
 
-## 🚀 Instalación e integración
+##  Instalación e integración
 
 1. **Copia el código** del formulario (`HTML`, `CSS` y `JavaScript`) en tu plantilla o en un bloque HTML personalizado de WordPress.  
 
@@ -43,7 +45,7 @@ Está diseñado para insertarse manualmente en una web con **WordPress**, integr
 
 ---
 
-## 📷 Vista previa
+##  Vista previa
 
 🔹 **Selección de servicio (paso 1)**  
 Formulario inicial con servicios destacados (energía, telefonía, alarmas, seguros).  
@@ -59,7 +61,7 @@ El usuario completa sus datos y ve el resumen antes de enviar.
 
 ---
 
-## ⚡ Flujo del usuario
+##  Flujo del usuario
 
 1. El cliente selecciona **servicio → compañía → oferta**.  
 2. Revisa un **resumen dinámico** con sus elecciones.  
@@ -68,12 +70,12 @@ El usuario completa sus datos y ve el resumen antes de enviar.
 
 ---
 
-## 📌 Estado del proyecto
+##  Estado del proyecto
 
 Proyecto funcional y listo para integrarse en entornos **WordPress**.  
 Actualmente está diseñado como **módulo independiente** para ser insertado en cualquier web manualmente.  
 
 ---
 
-✍️ Autor: **Guillermo Muñoz**  
 📅 Proyecto educativo / demostración en **WordPress + Contact Form 7**
+
